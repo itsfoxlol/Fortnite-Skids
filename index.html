@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Fortnite Skids</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            display: block;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: -1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .user-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .user-card {
+            background-color: #222222;
+            border: 1px solid #222222;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .user-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .user-info span {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .user-link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .user-link:hover {
+            text-decoration: underline;
+        }
+
+        .user-about {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fortnite Skids</h1>
+    <div class="user-container" id="user-container">
+    </div>
+
+    <script>
+        const skids = [
+            {
+                "userid": "1209612988961652776",
+                "displayname": "NamelessCT",
+                "username": "namelessct",
+                "about": "Developer of NL Hybrid\n100K+ Members\nhttps://discord.gg/namelessct\n\nKnowledge is power.\n\nChrisy ❤️ -> 🌎",
+                "avatar": "2b3cbc375fa29d8a5aff224705cc2ab6",
+                "created_on": "2024-02-20",
+                "github": "NamelessCT"
+            },
+            {
+                "userid": "1350561469644931083",
+                "displayname": "Fox",
+                "username": "foxud",
+                "about": "• Owner of BoltFN\n• https://guns.lol/foxud",
+                "avatar": "4881bc006bd1e9fdf2b5270883619694",
+                "created_on": "2025-03-15",
+                "github": "itsfoxlol"
+            },
+            {
+                "userid": "1179296301683322892",
+                "displayname": "vegemite",
+                "username": "rtfugdsdhjotvhjd",
+                "about": "",
+                "avatar": "439ea5eda2b8b36fb0ca9b7f6cd81f2a",
+                "created_on": "2023-11-29",
+                "github": "Vegemight"
+            },
+            {
+                "userid": "1145803314269802496",
+                "displayname": "pablo",
+                "username": "pabloproxy",
+                "about": "https://guns.lol/pablofrmdao \nhttps://discord.gg/ShadowGarden\nZyro unblock ugly ah mf built like autistic version of ddot",
+                "avatar": "67b3760582bd587dcfebeff36e59018c",
+                "created_on": "2023-08-28",
+                "github": "pabloproxy"
+            },
+            {
+                "userid": "1333302961001992215",
+                "displayname": "conspiracy | racist cat",
+                "username": "conspiracyud",
+                "about": "\"I LOVE .TEXT PATCHING WINDOWS USER32.DLL TO BE UD ON CHINESE MALWARE \" -conspiracy\n\nhttps://t.me/vixenud\nhttps://conspiracy.rip/ 🔥\nhttps://discord.gg/vixencommunity 🔥",
+                "avatar": "5651ddbad056f55340d48e522f5420ab",
+                "created_on": "2025-01-27",
+                "github": "conspiracylol"
+            },
+            {
+                "userid": "1322368185516687413",
+                "displayname": "sihost",
+                "username": "a.esta",
+                "about": "1k+ vouches",
+                "avatar": "8792641b9de52429cbc855681044c922",
+                "created_on": "2024-12-27",
+                "github": "sihost"
+            },
+            {
+                "userid": "1077008924747780199",
+                "displayname": "Reksely",
+                "username": "r7ks",
+                "about": "C#/C++ & JS dev\n\ncool project https://reksfn.dev/ (nvm got sued by epics)",
+                "avatar": "d9e76de545cd89f17ff3713d781676d7",
+                "created_on": "2023-02-19",
+                "github": "Reksely"
+            },
+            {
+                "userid": "771476132599562263",
+                "displayname": "stormzyiscuteee",
+                "username": "stormzyiscuteee",
+                "about": "",
+                "avatar": "3ce1c784b46a5f3e67ba1910ef9cee97",
+                "created_on": "2020-10-29",
+                "github": "stormzyidk"
+            },
+            {
+                "userid": "737314326712680459",
+                "displayname": "notpies",
+                "username": "notpies",
+                "about": "",
+                "avatar": "2f55864ddf398cc11d01a7574d32aa00",
+                "created_on": "2020-07-27",
+                "github": "NOTPIES"
+            },
+            {
+                "userid": "538173290557210636",
+                "displayname": "applefruit",
+                "username": "applefruit3355",
+                "about": "",
+                "avatar": "c39814f03cb443f47a8205d40fbb2e13",
+                "created_on": "2019-01-24"
+            },
+            {
+                "userid": "686617247145263134",
+                "displayname": "Xploit",
+                "username": "isgreat",
+                "about": "",
+                "avatar": "217658d842ef7c889af738ed4faf7bfb",
+                "created_on": "2020-03-09"
+            },
+            {
+                "userid": "1113241245364535416",
+                "displayname": "Bratic",
+                "username": "braticfn",
+                "about": "",
+                "avatar": "7b87a76dd38c6451e850a5537ed2f5e2",
+                "created_on": "2023-05-30"
+            }
+        ];
+
+        function makeLinksClickable(text) {
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            return text.replace(urlRegex, '<a href="$1" target="_blank" class="user-link">$1</a>');
+        }
+
+        function loadUsers(users) {
+            const container = document.getElementById('user-container');
+            users.forEach(user => {
+                const userCard = document.createElement('div');
+                userCard.className = 'user-card';
+
+                let avatarUrl = `https://cdn.discordapp.com/avatars/${user.userid}/${user.avatar}`;
+
+                const avatar = document.createElement('img');
+                avatar.src = avatarUrl;
+                avatar.className = 'user-avatar';
+
+                const displayName = document.createElement('h3');
+                const githubUrl = `https://github.com/${user.github}`;
+
+                if (user.github) {
+                    const displayNameLink = document.createElement('a');
+                    displayNameLink.href = githubUrl;
+                    displayNameLink.target = "_blank";
+                    displayNameLink.className = 'user-link';
+                    displayNameLink.innerText = user.displayname;
+                    displayName.appendChild(displayNameLink);
+                } else {
+                    displayName.innerText = user.displayname;
+                }
+
+                const userInfo = document.createElement('div');
+                userInfo.className = 'user-info';
+                userInfo.innerHTML = ` 
+                    <span><strong>Username:</strong> ${user.username}</span>
+                    <span><strong>Member Since:</strong> ${user.created_on}</span>
+                `;
+
+                const userAbout = document.createElement('div');
+                userAbout.className = 'user-about';
+                userAbout.innerHTML = makeLinksClickable(user.about);
+
+                userCard.appendChild(avatar);
+                userCard.appendChild(displayName);
+                userCard.appendChild(userAbout);
+                userCard.appendChild(userInfo);
+                container.appendChild(userCard);
+            });
+        }
+
+        loadUsers(skids);
+    </script>
+</body>
+</html>
